@@ -6,6 +6,8 @@ pipeline {
             steps {
                 echo 'Building'
                 sh 'mvn bundle-support:init'
+                sh 'cd modules/helloWorld'
+                sh 'mvn clean install'
             }
         }
         stage('Test') {
