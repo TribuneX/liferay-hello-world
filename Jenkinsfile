@@ -5,8 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
-                sh 'cd modules/helloWorld'
-                sh 'mvn clean install'
+                sh 'cd modules/helloWorld; mvn clean install'
             }
         }
         stage('Test') {
@@ -17,8 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'cd modules/helloWorld'
-                sh 'mvn deploy'
+                sh 'cd modules/helloWorld; mvn deploy'
             }
         }
     }
