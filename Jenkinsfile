@@ -1,13 +1,18 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'maven:3-alpine' 
+            args '-v /root/.m2:/root/.m2' 
+        }
+    }
 
     stages {
         stage('Build') {
             steps {
                 echo 'Building'
-                mvn bundle-support:init
-                cd modules/helloWorld
-                mvn clean install
+                sh 'mvn bundle-support:init'
+                sh 'cd modules/helloWorld'
+                sh 'mvn clean install'
             }
         }
         stage('Test') {
