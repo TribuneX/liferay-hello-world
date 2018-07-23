@@ -144,19 +144,10 @@
 			 <plugin>
     	    	<groupId>org.apache.maven.plugins</groupId>
         		<artifactId>maven-jar-plugin</artifactId>
-        		<version>2.3.1</version>
+        		<version>2.6</version>
         		<configuration>
           			<outputDirectory>${env.LIFERAY_HOME}</outputDirectory>
         		</configuration>
-        		<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
       		</plugin>
 
 		</plugins>
